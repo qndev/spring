@@ -1,21 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
-	<h1>Submitted RadioButtons</h1>
+    <h1>Submitted RadioButtons</h1>
 
-	<%
-	String radioKey = (String) request.getAttribute("radioKey");
-	%>
+    <%
+    String radioKey = (String) request.getAttribute("radioKey");
+    %>
 
-	<h2>Key value: ${radioKey}</h2>
+    <h2>Key value: ${radioKey}</h2>
 
 </body>
 </html>

@@ -20,37 +20,38 @@ import io.github.qndev.webmvc.model.RadioModel;
 @RequestMapping("/spring")
 public class TestController {
 
-	@RequestMapping(value="/init")
-	public String testInitRadiobutton(Model model, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    @RequestMapping(value = "/init")
+    public String testInitRadiobutton(Model model, HttpServletRequest httpServletRequest,
+            HttpServletResponse httpServletResponse) {
 
-		Map<String, String> radiobuttons = new HashMap<>();
-		radiobuttons.put("01", "James");
-		radiobuttons.put("02", "Amy");
-		radiobuttons.put("03", "Young");
-		List<Map.Entry<String, String>> radiobuttonsList = radiobuttons.entrySet().stream()
-				.collect(Collectors.toList());
+        Map<String, String> radiobuttons = new HashMap<>();
+        radiobuttons.put("01", "James");
+        radiobuttons.put("02", "Amy");
+        radiobuttons.put("03", "Young");
+        List<Map.Entry<String, String>> radiobuttonsList = radiobuttons.entrySet().stream()
+                .collect(Collectors.toList());
 
-		httpServletRequest.setAttribute("radiobuttonsList", radiobuttonsList);
-		
-		model.addAttribute("RadioModel", new RadioModel());
+        httpServletRequest.setAttribute("radiobuttonsList", radiobuttonsList);
 
-		return "InitRadioButton";
+        model.addAttribute("RadioModel", new RadioModel());
 
-	}
+        return "InitRadioButton";
 
-	@RequestMapping(value="/submit", method = RequestMethod.POST)
-	public String testSubmitRadiobutton(@ModelAttribute("RadioModel") RadioModel radioModel,
-			HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-		
-		String key = radioModel.getRadioButtonKey();
-		
-		// String value = radioModel.getRadioButtonValue();
-		
-		httpServletRequest.setAttribute("radioKey", key);
-		// httpServletRequest.setAttribute("radioValue", value);
+    }
 
-		return "Success";
+    @RequestMapping(value = "/submit", method = RequestMethod.POST)
+    public String testSubmitRadiobutton(@ModelAttribute("RadioModel") RadioModel radioModel,
+            HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 
-	}
+        String key = radioModel.getRadioButtonKey();
+
+        // String value = radioModel.getRadioButtonValue();
+
+        httpServletRequest.setAttribute("radioKey", key);
+        // httpServletRequest.setAttribute("radioValue", value);
+
+        return "Success";
+
+    }
 
 }

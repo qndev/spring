@@ -2,28 +2,28 @@ package io.github.qndev.webmvc.model;
 
 import java.io.Serializable;
 
-public class RadioModel implements Serializable{
+public class RadioModel implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	
-	private String radioButtonKey = null;
-	
-	private String radioButtonValue = null;
+    private static final long serialVersionUID = 1L;
 
-	public String getRadioButtonKey() {
-		return radioButtonKey;
-	}
+    private String radioButtonKey = null;
 
-	public void setRadioButtonKey(String radioButtonKey) {
-		this.radioButtonKey = radioButtonKey;
-	}
+    private String radioButtonValue = null;
 
-	public String getRadioButtonValue() {
-		return radioButtonValue;
-	}
+    public String getRadioButtonKey() {
+        return radioButtonKey;
+    }
 
-	public void setRadioButtonValue(String radioButtonValue) {
-		this.radioButtonValue = radioButtonValue;
-	}
+    public void setRadioButtonKey(String radioButtonKey) {
+        this.radioButtonKey = radioButtonKey;
+    }
+
+    public String getRadioButtonValue() {
+        return radioButtonValue;
+    }
+
+    public void setRadioButtonValue(String radioButtonValue) {
+        this.radioButtonValue = radioButtonValue;
+    }
 
 }
